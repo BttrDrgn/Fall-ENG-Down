@@ -1,0 +1,104 @@
+IMPORTANT NOTE:
+  This library is not intended to be a 100% implementation of the
+  DxLib or Luna interfaces!
+
+  Throw out the cruft and only allow what makes sense for modern
+  portability and hardware acceleration guidelines.
+
+---------------------------------------------------------------------------
+
+PortLib general:
+
+Audio:
+- Very tied together with DxLib's wants, with how the AudioBuffers are
+  configured. Clean them up.
+
+Font:
+- No generalized font support, TTF or otherwise. Too tied to DxLib still.
+
+Math:
+- Is generally untested.
+- Does not have matrix inversion.
+
+Rendering:
+- Currently too tied to OpenGL. Would like to separate that out more.
+- Has no proper fallbacks when framebuffers are not available. Most games
+  do not use them, but we just explode when they aren't there.
+- Similarly, tied directly into SDL2 too much.
+
+System:
+- Would like to make SDL2 replaceable with native systems, for Windows. 
+
+Text:
+- Sort of clunky, needs better conversion handling.
+
+Threading:
+- Would like some basic multithreading support for background loading and
+  data queueing, but this is a fairly large undertaking.
+
+---------------------------------------------------------------------------
+
+DxLib support:
+
+System:
+- DxLib general:
+  - No asynchronous loading support anywhere.
+- Memory:
+  - None of the debugging information is supported or used.
+  - Would like Handle to manage its own data heap for allocated stuff.
+- Text:
+  - HANGEUL, BIG5, GB2312 not supported.
+    (Need to embed codepage files. Easy, but no reason to do so yet.)
+- Log:
+  - Does not exist at this time.
+
+File I/O:
+- DXA archiver:
+  - Compressed data cannot be streamed incrementally.
+    Instead it will load decompress the whole thing into memory and
+    stream from there.
+- Files:
+  - No support for custom streaming functions.
+
+Graphics:
+- Functions unsupported:
+  - Vertex buffers.
+  - Shader filter nonsense.
+  - 3D.
+  - Any matrix math.
+- Movies:
+  - No support for movie playback, theora or otherwise.
+- Font:
+  - Does not support ANTIALIASING_4x4 or 8x8. Will automatically
+    fall back to ANTIALIASING.
+  - No vertical font rendering.
+  - Would like to support other forms of loading fonts in, not just
+    ttf. (An option to disable SDL_ttf entirely would be nice.)
+
+Sound:
+- AudioBuffer support needs to be split away from AudioInstance.
+- The rest of the Mem API needs to be implemented.
+
+Other:
+- Input:
+  - Multibyte/unicode input not supported.
+- Networking:
+  - No support whatsoever! (link to SDL2_net?)
+
+---------------------------------------------------------------------------
+
+Luna support: (general overview)
+- Only implemented just enough for a certain project, mostly unsupported.
+- No LunaDx8 support.
+- Luna Audio is mostly home-rolled, so a pile of extensions to add things
+  which are not normally supported seems like a good plan.
+
+---------------------------------------------------------------------------
+
+Immediate list:
+- 3d Math (vectors, matrices, etc).
+- Vertex buffers.
+- Movie playback somehow. (theora or bust)
+- Asynchronous loading, yayyyyy.
+- Audio revamp.
+- Review MojoShader again for Dx9 shader compilation support.

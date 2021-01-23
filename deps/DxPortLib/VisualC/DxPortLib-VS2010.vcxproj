@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4C5AB93F-D2A1-4ACC-9CCF-41347E3B36AF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DxPortLib</RootNamespace>
+    <ProjectName>DxPortLib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DXPORTLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>external\include;external\include\vorbis;external\include\SDL2;..\include;..\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DXPORTLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>external\include;external\include\vorbis;external\include\SDL2;..\include;..\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Library Include="external\lib\x86\libvorbisfile.lib" />
+    <Library Include="external\lib\x86\SDL2.lib" />
+    <Library Include="external\lib\x86\SDL2_image.lib" />
+    <Library Include="external\lib\x86\SDL2_ttf.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\DPLBuildConfig.h" />
+    <ClInclude Include="..\include\DPLCommon.h" />
+    <ClInclude Include="..\include\DPLWinTypes.h" />
+    <ClInclude Include="..\include\DxDefines.h" />
+    <ClInclude Include="..\include\DxLib.h" />
+    <ClInclude Include="..\include\DxLib_c.h" />
+    <ClInclude Include="..\include\DxPortLib.h" />
+    <ClInclude Include="..\include\DxPortLib_c.h" />
+    <ClInclude Include="..\include\Luna.h" />
+    <ClInclude Include="..\include\LunaDx8.h" />
+    <ClInclude Include="..\include\LunaMain.h" />
+    <ClInclude Include="..\src\DPL\DPLInternal.h" />
+    <ClInclude Include="..\src\DxLib\DxBlendModes.h" />
+    <ClInclude Include="..\src\DxLib\DxInternal.h" />
+    <ClInclude Include="..\src\Luna\LunaInternal.h" />
+    <ClInclude Include="..\src\PL\D3D9\PLD3D9Internal.h" />
+    <ClInclude Include="..\src\PL\GL\PLGLInternal.h" />
+    <ClInclude Include="..\src\PL\PLInternal.h" />
+    <ClInclude Include="..\src\PL\SDL2\PLSDL2Internal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\DPL\DPLCppWrapper.cpp" />
+    <ClCompile Include="..\src\DPL\DPLList.c" />
+    <ClCompile Include="..\src\DPL\DPLText.c" />
+    <ClCompile Include="..\src\DPL\DPLWinINI.c" />
+    <ClCompile Include="..\src\DxLib\DxDraw.c" />
+    <ClCompile Include="..\src\DxLib\DxDXA.c" />
+    <ClCompile Include="..\src\DxLib\DxFile.c" />
+    <ClCompile Include="..\src\DxLib\DxFont.c" />
+    <ClCompile Include="..\src\DxLib\DxGraph.c" />
+    <ClCompile Include="..\src\DxLib\DxLib.cpp" />
+    <ClCompile Include="..\src\DxLib\DxLib_c.c" />
+    <ClCompile Include="..\src\Luna\Luna.cpp" />
+    <ClCompile Include="..\src\Luna\Luna3D.cpp" />
+    <ClCompile Include="..\src\Luna\LunaCamera.cpp" />
+    <ClCompile Include="..\src\Luna\LunaChara.cpp" />
+    <ClCompile Include="..\src\Luna\LunaFile.cpp" />
+    <ClCompile Include="..\src\Luna\LunaFontSprite.cpp" />
+    <ClCompile Include="..\src\Luna\LunaInput.cpp" />
+    <ClCompile Include="..\src\Luna\LunaMath.cpp" />
+    <ClCompile Include="..\src\Luna\LunaRand.cpp" />
+    <ClCompile Include="..\src\Luna\LunaSound.cpp" />
+    <ClCompile Include="..\src\Luna\LunaSprite.cpp" />
+    <ClCompile Include="..\src\Luna\LunaSurface.cpp" />
+    <ClCompile Include="..\src\Luna\LunaTexture.cpp" />
+    <ClCompile Include="..\src\Luna\LunaVecMath.cpp" />
+    <ClCompile Include="..\src\PL\D3D9\PLD3D9.c" />
+    <ClCompile Include="..\src\PL\D3D9\PLD3D9Buffers.c" />
+    <ClCompile Include="..\src\PL\D3D9\PLD3D9FixedFunction.c" />
+    <ClCompile Include="..\src\PL\D3D9\PLD3D9Render.c" />
+    <ClCompile Include="..\src\PL\D3D9\PLD3D9Shaders.c" />
+    <ClCompile Include="..\src\PL\D3D9\PLD3D9Texture.c" />
+    <ClCompile Include="..\src\PL\GL\PLGL.c" />
+    <ClCompile Include="..\src\PL\GL\PLGLBuffers.c" />
+    <ClCompile Include="..\src\PL\GL\PLGLFixedFunction.c" />
+    <ClCompile Include="..\src\PL\GL\PLGLRender.c" />
+    <ClCompile Include="..\src\PL\GL\PLGLShaders.c" />
+    <ClCompile Include="..\src\PL\GL\PLGLTexture.c" />
+    <ClCompile Include="..\src\PL\PLAudio.c" />
+    <ClCompile Include="..\src\PL\PLFile.c" />
+    <ClCompile Include="..\src\PL\PLHandle.c" />
+    <ClCompile Include="..\src\PL\PLInput.c" />
+    <ClCompile Include="..\src\PL\PLMath.c" />
+    <ClCompile Include="..\src\PL\PLRNG.c" />
+    <ClCompile Include="..\src\PL\PLSurface.c" />
+    <ClCompile Include="..\src\PL\PLText.c" />
+    <ClCompile Include="..\src\PL\PLTextSnprintf.c" />
+    <ClCompile Include="..\src\PL\PLTextSscanf.c" />
+    <ClCompile Include="..\src\PL\PLText_CP932.c" />
+    <ClCompile Include="..\src\PL\SDL2\PLSDL2File.c" />
+    <ClCompile Include="..\src\PL\SDL2\PLSDL2GL.c" />
+    <ClCompile Include="..\src\PL\SDL2\PLSDL2Main.c" />
+    <ClCompile Include="..\src\PL\SDL2\PLSDL2Memory.c" />
+    <ClCompile Include="..\src\PL\SDL2\PLSDL2SaveScreen.c" />
+    <ClCompile Include="..\src\PL\SDL2\PLSDL2System.c" />
+    <ClCompile Include="..\src\PL\SDL2\PLSDL2Window.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

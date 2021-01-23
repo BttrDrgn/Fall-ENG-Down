@@ -92,6 +92,7 @@ workspace "Fall-ENG-Down"
 
 		includedirs {
 			"..\\deps\\DxLib\\",
+			"..\\deps\\DxPortLib\\include\\",
 			"..\\deps\\libvorbis-1.3.7\\include\\",
 			"..\\deps\\SDL2_image-2.0.5\\include\\",
 			"..\\deps\\SDL2_ttf-2.0.15\\include\\",
