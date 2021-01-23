@@ -8,4 +8,7 @@ please refer to the [premake](https://premake.github.io/) guide for your specifi
 
 # Dependencies
 These ARE provided in the `./deps` folder, but here are the links anyway!
+- [SDL2](https://www.libsdl.org/)
+- [SDL_image](https://www.libsdl.org/projects/SDL_image/)
+- [SDL_ttf](https://www.libsdl.org/projects/SDL_ttf/)
 - [DxLib](https://dxlib.xsrv.jp/dxdload.html)
