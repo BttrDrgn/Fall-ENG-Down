@@ -1,5 +1,5 @@
 workspace "Fall-ENG-Down"
-	location ".\\build\\"
+	location "..\\build\\"
 
 	targetdir "%{wks.location}\\bin\\%{cfg.buildcfg}\\"
 	objdir "%{wks.location}\\obj\\%{cfg.buildcfg}\\%{prj.name}\\"
