@@ -12,3 +12,4 @@ These ARE provided in the `./deps` folder, but here are the links anyway!
 - [SDL_image](https://www.libsdl.org/projects/SDL_image/)
 - [SDL_ttf](https://www.libsdl.org/projects/SDL_ttf/)
 - [DxLib](https://dxlib.xsrv.jp/dxdload.html)
+- [DxPortLib](https://github.com/mauvecow/DxPortLib) (for non-windows platforms)
