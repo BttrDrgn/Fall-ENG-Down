@@ -15,14 +15,14 @@ workspace "Fall-ENG-Down"
 	warnings "extra"
 
 	includedirs {
-		".\\src\\",
+		"..\\src\\",
 	}
 
 	syslibdirs {
-		".\\deps\\DxLib\\",
-		".\\deps\\SDL2_image-2.0.5\\lib\\x86\\",
-		".\\deps\\SDL2_ttf-2.0.15\\lib\\x86\\",
-		".\\deps\\SDL2-2.0.14\\lib\\x86\\",
+		"..\\deps\\DxLib\\",
+		"..\\deps\\SDL2_image-2.0.5\\lib\\x86\\",
+		"..\\deps\\SDL2_ttf-2.0.15\\lib\\x86\\",
+		"..\\deps\\SDL2-2.0.14\\lib\\x86\\",
 	}
 
 	buildoptions {
@@ -71,16 +71,12 @@ workspace "Fall-ENG-Down"
 	project "game"
 		targetname "Fall-ENG-Down"
 		pchheader "stdafx.hpp"
-		pchsource "src/stdafx.cpp"
+		pchsource "../src/stdafx.cpp"
 		forceincludes "stdafx.hpp"
 
 		language "c++"
 		kind "windowedapp"
 		warnings "off"
-		
-		pchheader "stdafx.hpp"
-		pchsource "src/stdafx.cpp"
-		forceincludes "stdafx.hpp"
 
 		links {
 			"SDL2.lib",
@@ -91,13 +87,13 @@ workspace "Fall-ENG-Down"
 		}
 		
 		files {
-			".\\src\\**",
+			"..\\src\\**",
 		}
 
 		includedirs {
-			".\\deps\\DxLib\\",
-			".\\deps\\libvorbis-1.3.7\\include\\",
-			".\\deps\\SDL2_image-2.0.5\\include\\",
-			".\\deps\\SDL2_ttf-2.0.15\\include\\",
-			".\\deps\\SDL2-2.0.14\\include\\",
+			"..\\deps\\DxLib\\",
+			"..\\deps\\libvorbis-1.3.7\\include\\",
+			"..\\deps\\SDL2_image-2.0.5\\include\\",
+			"..\\deps\\SDL2_ttf-2.0.15\\include\\",
+			"..\\deps\\SDL2-2.0.14\\include\\",
 		}

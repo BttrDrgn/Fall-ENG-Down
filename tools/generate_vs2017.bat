@@ -1,6 +1,5 @@
-cd ..
 @echo off
 echo Updating submodules...
 git submodule update --init --remote --recursive
 echo Generating project files...
-call "tools/premake5.exe" vs2017 --file=tools/visual_studio.lua
+call "premake5.exe" vs2017 --file=premake.lua
