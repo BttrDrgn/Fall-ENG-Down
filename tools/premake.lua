@@ -20,9 +20,6 @@ workspace "Fall-ENG-Down"
 
 	syslibdirs {
 		"..\\deps\\DxLib\\",
-		"..\\deps\\SDL2_image-2.0.5\\lib\\x86\\",
-		"..\\deps\\SDL2_ttf-2.0.15\\lib\\x86\\",
-		"..\\deps\\SDL2-2.0.14\\lib\\x86\\",
 	}
 
 	buildoptions {
@@ -79,10 +76,6 @@ workspace "Fall-ENG-Down"
 		warnings "off"
 
 		links {
-			"SDL2.lib",
-			"SDL2main.lib",
-			"SDL2_image.lib",
-			"SDL2_ttf.lib",
 			"DxLib.lib",
 		}
 		
@@ -92,8 +85,4 @@ workspace "Fall-ENG-Down"
 
 		includedirs {
 			"..\\deps\\DxLib\\",
-			"..\\deps\\libvorbis-1.3.7\\include\\",
-			"..\\deps\\SDL2_image-2.0.5\\include\\",
-			"..\\deps\\SDL2_ttf-2.0.15\\include\\",
-			"..\\deps\\SDL2-2.0.14\\include\\",
 		}

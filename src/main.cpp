@@ -77,7 +77,6 @@ int ProcessLoop(){
 }
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow){
-	MessageBoxA(nullptr, 0,0,0);
 	SetWindowStyleMode(2);
 	SetAlwaysRunFlag(FALSE);
 	SetDoubleStartValidFlag(FALSE);
